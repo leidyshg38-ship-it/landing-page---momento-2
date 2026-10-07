@@ -1,0 +1,621 @@
+/* ============================================================
+   ESTILOS GENERALES - PROINGESCOM SAS
+   Concepto: estética de obra/cinta de seguridad.
+   Paleta: negro (fondo/principal), amarillo (secundario), blanco (complementario)
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* El padding y el borde no aumentan el tamaño total del elemento */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Tipografía de texto: Arial */
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: Helvetica, Arial, sans-serif; /* Tipografía de títulos: Helvetica */
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Contenedor general reutilizable para centrar el contenido de cada sección */
+.seccion-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+/* Elemento de marca: franja diagonal tipo cinta de seguridad de obra.
+   Se usa como divisor entre secciones clave, no en todas partes. */
+.franja-seguridad {
+    height: 14px;
+    background: repeating-linear-gradient(
+        135deg,
+        #ffc400,
+        #ffc400 22px,
+        #0a0a0a 22px,
+        #0a0a0a 44px
+    );
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+    background-color: #0a0a0a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 20px;
+
+    /* Flexbox para organizar logo y menú */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.menu-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.menu-lista li {
+    border-left: 1px solid #2a2a2a;
+}
+
+.menu-lista a {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 18px;
+    color: #d9d9d9;
+    transition: color 0.2s ease;
+}
+
+.menu-lista a:hover {
+    color: #ffc400;
+}
+
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+.boton {
+    display: inline-block;
+    padding: 13px 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid #ffc400;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-principal {
+    background-color: #ffc400;
+    color: #0a0a0a;
+}
+
+.boton-principal:hover {
+    background-color: transparent;
+    color: #ffc400;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: #ffc400;
+    border: 2px solid #ffc400;
+    padding: 10px 22px;
+    font-size: 14px;
+}
+
+.boton-secundario:hover {
+    background-color: #ffc400;
+    color: #0a0a0a;
+}
+
+
+/* ============================================================
+   HERO - imagen de fondo a pantalla completa con panel superpuesto
+   ============================================================ */
+
+.hero {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.hero-fondo {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-fondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(35%);
+}
+
+.hero-fondo::after {
+    content: "";
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(10,10,10,0.95) 10%, rgba(10,10,10,0.35) 70%);
+}
+
+.hero-panel {
+    position: relative;
+    max-width: 620px;
+    margin: 0 0 0 20px;
+    padding: 40px 36px 50px;
+    border-left: 6px solid #ffc400;
+}
+
+.hero-tipo {
+    color: #ffc400;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.hero-panel h1 {
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.hero-eslogan {
+    font-size: 19px;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+.hero-descripcion {
+    font-size: 15px;
+    color: #cccccc;
+    margin-bottom: 28px;
+    max-width: 52ch;
+}
+
+
+/* ============================================================
+   SECCIÓN NOSOTROS
+   ============================================================ */
+
+.nosotros-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px;
+
+    /* Flexbox: visual + texto */
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.nosotros-visual {
+    position: relative;
+    flex: 1 1 360px;
+}
+
+.nosotros-cifra {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    background-color: #ffc400;
+    color: #0a0a0a;
+    padding: 20px 26px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.cifra-numero {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cifra-texto {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.nosotros-texto {
+    flex: 1 1 420px;
+    padding-top: 10px;
+}
+
+.nosotros-texto h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.nosotros-item {
+    padding: 16px 0;
+    border-top: 1px solid #262626;
+}
+
+.nosotros-item h3 {
+    color: #ffc400;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.nosotros-item p {
+    color: #bfbfbf;
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   TÍTULOS DE SECCIÓN (reutilizable)
+   ============================================================ */
+
+.titulo-seccion {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.subtitulo-seccion {
+    color: #999999;
+    margin-bottom: 40px;
+}
+
+
+/* ============================================================
+   SERVICIOS - TARJETAS (bordes rectos, sin sombras)
+   ============================================================ */
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta {
+    background-color: #111111;
+    border: 1px solid #2a2a2a;
+    flex: 1 1 300px;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+}
+
+.tarjeta:hover {
+    border-color: #ffc400;
+}
+
+.tarjeta img {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+}
+
+.tarjeta-contenido {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-top: 3px solid #ffc400;
+}
+
+.tarjeta-contenido h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-contenido p {
+    color: #bfbfbf;
+    font-size: 14px;
+    margin-bottom: 14px;
+    flex-grow: 1;
+}
+
+.tarjeta-precio {
+    display: block;
+    color: #ffc400;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+
+/* ============================================================
+   PRODUCTOS / TABLA DE EQUIPOS
+   ============================================================ */
+
+.tabla-equipos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabla-equipos th,
+.tabla-equipos td {
+    border-bottom: 1px solid #2a2a2a;
+    padding: 16px 14px;
+    text-align: left;
+}
+
+.tabla-equipos th {
+    background-color: #0a0a0a;
+    color: #ffc400;
+    font-family: Helvetica, Arial, sans-serif;
+    border-bottom: 2px solid #ffc400;
+    font-size: 14px;
+}
+
+.tabla-equipos td {
+    color: #d9d9d9;
+    font-size: 14px;
+}
+
+.tabla-equipos tr:hover td {
+    background-color: #151515;
+}
+
+
+/* ============================================================
+   BENEFICIOS
+   ============================================================ */
+
+.beneficios-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.beneficio {
+    flex: 1 1 220px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.beneficio-marca {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background-color: #ffc400;
+    color: #0a0a0a;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.beneficio h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.beneficio p {
+    color: #bfbfbf;
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   GALERÍA
+   ============================================================ */
+
+.galeria-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.galeria-lista img {
+    flex: 1 1 260px;
+    height: 220px;
+    object-fit: cover;
+    filter: grayscale(40%);
+    transition: filter 0.2s ease;
+}
+
+.galeria-lista img:hover {
+    filter: grayscale(0%);
+}
+
+
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+
+.contacto-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.contacto-info {
+    flex: 1 1 320px;
+}
+
+.contacto-info h2 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.contacto-info p {
+    color: #d9d9d9;
+    margin-bottom: 24px;
+}
+
+.contacto-lista li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid #262626;
+    color: #d9d9d9;
+    font-size: 14px;
+}
+
+.contacto-lista strong {
+    color: #999999;
+}
+
+.contacto-lista a:hover {
+    color: #ffc400;
+}
+
+.contacto-formulario {
+    flex: 1 1 380px;
+    border: 1px solid #2a2a2a;
+    padding: 30px;
+}
+
+.contacto-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contacto-formulario label {
+    font-size: 13px;
+    color: #999999;
+    margin-top: 12px;
+}
+
+.contacto-formulario input,
+.contacto-formulario select,
+.contacto-formulario textarea {
+    background-color: #0a0a0a;
+    border: none;
+    border-bottom: 2px solid #333333;
+    padding: 10px 2px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.contacto-formulario input:focus,
+.contacto-formulario select:focus,
+.contacto-formulario textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #ffc400;
+}
+
+.contacto-formulario textarea {
+    resize: vertical;
+}
+
+.contacto-formulario button {
+    margin-top: 24px;
+    align-self: flex-start;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    text-align: center;
+    padding: 26px 20px;
+    color: #777777;
+    font-size: 13px;
+    border-top: 1px solid #1a1a1a;
+}
+
+
+/* ============================================================
+   DISEÑO RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .header-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-lista {
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-panel {
+        margin: 0 16px;
+        padding: 28px 22px 36px;
+    }
+
+    .hero-panel h1 {
+        font-size: 30px;
+    }
+
+    .nosotros-contenedor {
+        flex-direction: column;
+    }
+
+    .nosotros-cifra {
+        right: 10px;
+    }
+
+    .contacto-lista li {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .contacto-formulario button {
+        align-self: stretch;
+        text-align: center;
+    }
+}
